@@ -1,4 +1,4 @@
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, Container, extendTheme } from "@chakra-ui/react";
 import "@fontsource/roboto";
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
@@ -20,8 +20,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
         "tertiary-yellow": "#fbdb6b",
         "primary-teal": "#3C8E9B",
         "secondary-teal": "#33A8A4",
-        white: "#ffffff",
+        "deep-teal": "#4d6e7f",
       },
+      "main-background": "#fcffee",
     },
     fonts: {
       body: `'Roboto', sans-serif`,
@@ -32,7 +33,16 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+        <Container
+          minH="100vh"
+          minW="100vw"
+          p={0}
+          m={0}
+          display="grid"
+          bg="main-background"
+        >
+          <Component {...pageProps} />
+        </Container>
       </ChakraProvider>
     </SessionProvider>
   );
