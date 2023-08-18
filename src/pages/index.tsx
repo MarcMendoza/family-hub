@@ -29,6 +29,7 @@ export default function Home() {
   );
 }
 
+// TODO Remove, keeping until I start working on the api stuff
 function AuthShowcase() {
   const { data: sessionData } = useSession();
   sessionData?.user.image;
