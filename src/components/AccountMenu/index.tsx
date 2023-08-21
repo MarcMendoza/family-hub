@@ -31,16 +31,7 @@ const AccountMenu = () => {
         <Portal>
           <MenuList>
             <MenuItem
-              onClick={async () => {
-                await signOut()
-                  .then((_result) => {
-                    // TODO handle redirect?
-                  })
-                  .catch((_error) => {
-                    // TODO do something with the error
-                  });
-                return;
-              }}
+              onClick={() => void signOut()}
             >
               Sign out
             </MenuItem>
