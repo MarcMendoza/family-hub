@@ -33,12 +33,13 @@ const AccountMenu = () => {
             <MenuItem
               onClick={async () => {
                 await signOut()
-                  .then((result) => {
+                  .then((_result) => {
                     // TODO handle redirect?
                   })
-                  .catch((error) => {
+                  .catch((_error) => {
                     // TODO do something with the error
                   });
+                return;
               }}
             >
               Sign out
