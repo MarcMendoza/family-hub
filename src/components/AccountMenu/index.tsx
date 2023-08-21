@@ -30,7 +30,14 @@ const AccountMenu = () => {
         </MenuButton>
         <Portal>
           <MenuList>
-            <MenuItem onClick={() => signOut()}>Sign out</MenuItem>
+            <MenuItem
+              onClick={() => {
+                signOut();
+                return;
+              }}
+            >
+              Sign out
+            </MenuItem>
           </MenuList>
         </Portal>
       </Menu>
